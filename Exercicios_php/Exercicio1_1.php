@@ -1,17 +1,11 @@
-<?php 
-$numeros=[5,4,7,4,16,8,4,3,9];
-function Calcularmedia($numeros)
-{
-    $total=0;
+<?php
+function calcularMedia() {
+    $indeterminados = func_get_args();
     
-    foreach ($numeros as $valor) {
-        $total= $total+ $valor;
-        
-      }
-      $media=$total/count($numeros);
-      return $media;
-    }
-    $media=Calcularmedia($numeros);
-    echo "A média é: ".number_format($media,2)."\n";
-
+        $soma = array_sum($indeterminados);
+        $total = count($indeterminados);
+        $media = $soma / $total;
+        echo "A média é: $media";   
+}
+calcularMedia(1, 2, 3, 7, 8, 9);
 ?>
