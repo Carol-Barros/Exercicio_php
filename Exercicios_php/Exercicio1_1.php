@@ -1,11 +1,21 @@
 <?php
-function calcularMedia() {
-    $indeterminados = func_get_args();
-    
-        $soma = array_sum($indeterminados);
-        $total = count($indeterminados);
-        $media = $soma / $total;
-        echo "A média é: $media";   
+
+/**
+ * @file
+ * Drupal Module: Unomi Connect.
+ */
+
+/**
+ * Calcula a média.
+ *
+ * @param array ...$indeterminados
+ *   Quantidade indeterminada de parametros.
+ */
+function calcular_media(...$indeterminados) {
+
+    $soma = array_sum($indeterminados);
+    $total = count($indeterminados);
+    $media = $soma / $total;
+    echo "A média é: $media";   
 }
-calcularMedia(1, 2, 3, 7, 8, 9);
-?>
+calcular_media(1, 2, 3, 7, 8, 9);
